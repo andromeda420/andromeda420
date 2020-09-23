@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.chappaai" name="Chappa'ai" version="G.1.7" provider-name="[COLOR] gold]Mr.Blamo{/COLOR]">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="metadata.tvdb.com" version="3.0.14"/>
+		<import addon="script.module.futures" version="2.2.0"/>
+		<import addon="script.module.requests" version="2.19.1"/>
+		<import addon="script.module.requests-cache" version="0.4.13"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="chappaai.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py"/>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py">
+				<label>Chappa'ai - Default Player</label>
+				<visible>!String.StartsWith(ListItem.path,plugin://plugin.video.chappaai/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context2.py">
+				<label>Chappa'ai - Choose Player</label>
+				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">TMDb, TVDb and Trakt browser</summary>
+		<description lang="en">Browse The MovieDb, The TVDb, Trakt and pass info along to library or an addon. Needs player-files and the appropriate addon to play the files.</description>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot000.jpg</screenshot>
+			<screenshot>resources/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshot002.jpg</screenshot>
+		</assets>
+		<license></license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<news>
+		G.1.5 - Added New Shows menu(thanks to contributer)
+		1 - Fix bug with missing ID in TV menus
+		2 - Added realtitle (movies) and realname (tvshows) parameters for plexkodiconnect compatibility
+		3 - Handle non-existent 'filename' key in TVDB data.
+		4 - TVDB API fix, thanks to @ruinernin and @bg-22 (among others)!
+				 BUG: Some artwork may not load for certain items, due to ongoing API instability.
+		5 - Added language option for player-files (TV)
+		6 - Fix art in TV menus
+		7 - Fix crash from empty "first_aired" string"
+		8 - Fix crash when we can't contact TVDB
+		9 - Fix crashes from non-existent keys
+		10 - Added default play action, options for movies are; Play/Wraith and options for episodes are; Play/Wraith(TV Show info)/Wraith(Episode info).
+		11 - Fix clearlogo for movies
+		12 - Fix typo in season fanart request.
+		13 - Add fanart caching
+		14 - Fix season artwork
+		15 - Add unwatched counts for shows/seasons.
+		16 - Fix "Upcoming Episodes" and "Next Episodes".
+		17 - Fixed "Next Page" bug with widgets.</news>
+	</extension>
+</addon>

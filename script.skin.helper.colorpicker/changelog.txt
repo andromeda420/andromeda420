@@ -1,0 +1,2 @@
+1.0.14
+Fix for ShortcutProperty Handling - MuadDib

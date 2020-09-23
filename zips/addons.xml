@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="plugin.program.blamowizard" name="69 Death Wizard" version="1.0.3" provider-name="69 Death Squad">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">69 Death Wizard</summary>
+    <description lang="en">69 Wizard allows access to Builds</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.anime69" name="Anime Toons" version="1.0.0" provider-name="Mr.Blamo">
+  <requires>
+    <import addon="xbmc.python" version="2.19.0"/>
+    <import addon="script.module.resolveurl"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="anime.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+    <reuselanguageinvoker>false</reuselanguageinvoker>
+  </extension>
+</addon>
+
+<addon id="plugin.video.chappaai" name="Chappa'ai" version="G.1.7" provider-name="[COLOR] gold]Mr.Blamo{/COLOR]">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="metadata.tvdb.com" version="3.0.14"/>
+		<import addon="script.module.futures" version="2.2.0"/>
+		<import addon="script.module.requests" version="2.19.1"/>
+		<import addon="script.module.requests-cache" version="0.4.13"/>
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="chappaai.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py"/>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py">
+				<label>Chappa'ai - Default Player</label>
+				<visible>!String.StartsWith(ListItem.path,plugin://plugin.video.chappaai/)+[String.IsEqual(ListItem.dbtype,episode)|String.IsEqual(ListItem.dbtype,movie)]</visible>
+			</item>
+			<item library="context2.py">
+				<label>Chappa'ai - Choose Player</label>
+				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,episode)</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">TMDb, TVDb and Trakt browser</summary>
+		<description lang="en">Browse The MovieDb, The TVDb, Trakt and pass info along to library or an addon. Needs player-files and the appropriate addon to play the files.</description>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot000.jpg</screenshot>
+			<screenshot>resources/screenshot001.jpg</screenshot>
+			<screenshot>resources/screenshot002.jpg</screenshot>
+		</assets>
+		<license></license>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<news>
+		G.1.5 - Added New Shows menu(thanks to contributer)
+		1 - Fix bug with missing ID in TV menus
+		2 - Added realtitle (movies) and realname (tvshows) parameters for plexkodiconnect compatibility
+		3 - Handle non-existent 'filename' key in TVDB data.
+		4 - TVDB API fix, thanks to @ruinernin and @bg-22 (among others)!
+				 BUG: Some artwork may not load for certain items, due to ongoing API instability.
+		5 - Added language option for player-files (TV)
+		6 - Fix art in TV menus
+		7 - Fix crash from empty "first_aired" string"
+		8 - Fix crash when we can't contact TVDB
+		9 - Fix crashes from non-existent keys
+		10 - Added default play action, options for movies are; Play/Wraith and options for episodes are; Play/Wraith(TV Show info)/Wraith(Episode info).
+		11 - Fix clearlogo for movies
+		12 - Fix typo in season fanart request.
+		13 - Add fanart caching
+		14 - Fix season artwork
+		15 - Add unwatched counts for shows/seasons.
+		16 - Fix "Upcoming Episodes" and "Next Episodes".
+		17 - Fixed "Next Page" bug with widgets.</news>
+	</extension>
+</addon>
+
+<addon id="plugin.video.chocolatesaltyballs" name="[COLOR gold]Chocolate Salty Balls[/COLOR]" version="2.3" provider-name="[COLOR gold]Mr.Blamo[/COLOR]">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" />
+        <import addon="script.module.python.koding.aio" />
+        <import addon="script.module.beautifulsoup" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.addon.common" />
+        <import addon="script.module.xmltodict" />
+        <import addon="script.module.dateutil" />
+<!-- 		<import addon="script.module.catchuptv" /> -->
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Big Chocolate Salty Balls</summary>
+        <description lang="en">Brought to you by Mr.Blamo Premium Service Required</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" name="f4mTester" version="2.7.2" provider-name="Shani">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.video.F4mProxy" version="2.7.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>f4mTester</summary>
+        <description></description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="plugin.video.live.streamspro"
+       name="LiveStreamsPro"
+       version="2.8.1"
+       provider-name="Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>livestreamspro- shamelessly forked from livestreams but added many thinks</summary>
+    <description>
+        In addition to what livestreams allowed you to do, you can now,
+        1. call regex in regex,
+        2. multiple regex in page, regex in session, also htmlunescape responses
+        3. create session from one regex and pass onto next in line
+        4. save sessions to a file and open again later
+        5. write python code in .py file, put in the profile directory and then call from your regex.
+        6. use epoctime, guid and unpack as functions already defined.
+        7. Use it to post values to the pages to get the proper responses
+        8. support many headers, like origin, X-Requested-With
+        9. you can now append cookies in response and then read in regex using includeheaders
+        10. You can now link to another web url via your xml using externallink
+        11. support for google captcha, now you can show and then post the text
+
+    </description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.neptune" version="1.4.0" name=" Neptune Rising" provider-name="MrBlamo">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0" />
+		<import addon="script.neptune.artwork" />
+		<import addon="script.neptune.metadata" />
+		<import addon="script.module.resolveurl"/>
+		<import addon="script.module.metahandler"/>
+		<import addon="script.module.requests"/>
+		<import addon="script.module.beautifulsoup"/>
+		<import addon="script.module.schism.common"/>
+		<import addon="script.module.futures"/>
+		<import addon="script.module.universalscrapers" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="neptune.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" start="startup" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Neptune Rising</summary>
+		<description lang="en">Movie, TV Show, and Playlist Add-on</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
+The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
+This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
+</disclaimer>
+		<platform>all</platform>
+		<license>Beerware rev. 42</license>
+		<platform>all</platform>
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<forum></forum>
+		<website></website>
+		<source></source>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
+		<news></news>
+	</extension>
+</addon>
+
+<addon
+  id="plugin.video.SportsDevil"
+  version="2018.04.11"
+  name="SportsDevil"
+  provider-name="SportsDevil">
+  <requires>
+   <import addon="xbmc.python" version="2.14.0"/>
+   <import addon="script.module.dateutil" />
+   <import addon="script.module.simplejson" />
+   <import addon="script.module.six" />
+   <import addon="script.module.requests" />
+   <import addon="script.module.streamlink.base" />
+   <import addon="plugin.video.f4mTester" />
+  </requires>
+  <extension
+    point="xbmc.python.pluginsource"
+    library="default.py">
+   <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service/streamlink_proxy.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">SportsDevil addon</summary>
+    <description lang="en">Play videos of different ad-financed sports streaming sites.</description>
+	<disclaimer lang="en">SportsDevil does not provide any streams of its own; stream quality, content and copyright are responsibility of the ad-financed source web site. For updates - check the readme.</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.xtasy" name="[COLOR green]XTASY D[/COLOR]" version="1.0.5" provider-name="Xtasy Dreamer">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.universalscrapers" version="1.0.0" />
+        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
+        <import addon="script.module.beautifulsoup" version="3.2.1" />
+        <import addon="script.module.requests" version="2.9.1" />
+        <import addon="script.module.addon.common" version="2.0.0" />
+        <import addon="script.module.xmltodict" version="0.9.0" />
+        <import addon="script.module.dateutil" />
+		<import addon="script.module.youtube.dl" optional="true"/>
+        <import addon="plugin.video.youtube" version="3.0.0"/>
+        <!--<import addon="script.module.web-pdb" version="1.0"/>-->
+        <import addon="script.module.resolveurl" />
+        <!--<import addon="script.module.urlresolver" />-->
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Channels and playlists organised by categories using YouTube only.</summary>
+        <description lang="en">Xtasy D is a mix bag of one click playlists for all!</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+        <platform>all</platform>
+        <website/>
+        <video_guide></video_guide>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+    </extension>
+</addon>
+
+    <addon id="repository.blamorepo" name="[COLOR red]Blamo Repo Reborn[/COLOR]" version="1.2.3" provider-name="[COLOR red]Mr.Blamo[/COLOR]">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="[COLOR red]Blamo Repo[/COLOR]">
+            <info compressed="false">https://raw.githubusercontent.com/andromeda420/andromeda420/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/andromeda420/andromeda420/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/andromeda420/andromeda420/master/zips/</datadir>
+            <hashes>false</hashes>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
+            </dir>
+            <dir>
+                <info>https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://repo.orionoid.com/addons.xml?v=3.3.0</info>
+                <checksum>https://repo.orionoid.com/addons.xml.md5?v=3.3.0</checksum>
+                <datadir zip="true">https://repo.orionoid.com</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+            </dir>
+            <dir>
+                <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>The Official Repo for Blamo</summary>
+            <description>The Official Repo for Blamo</description>
+            <platform>all</platform>
+            <genre>movies,usa</genre>
+        </extension>
+    </addon>
+
+<addon id="script.extendedinfo" name="[COLOR Purple]Wraith[/COLOR]" version="5.6.0" provider-name="[COLOR gold]Mr.Blamo[/COLOR]">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+		<import addon="script.module.pil" version="1.1.7"/>
+		<import addon="plugin.video.youtube" version="6.2.2"/>
+		<import addon="script.module.requests" version="2.9.1"/>
+		<import addon="script.skin.helper.service" version="1.0.0"/>
+		<import addon="resource.images.studios.white" version="0.0.18"/>
+		<import addon="plugin.video.chappaai" version="1.0.0" optional="true"/>
+	</requires>
+	<extension point="xbmc.python.script" library="script.py"/>
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+		<provides>video</provides>
+	</extension>
+	<extension point="kodi.context.item">
+		<menu id="kodi.core.main">
+			<item library="context.py">
+				<label>Wraith</label>
+				<visible>String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season) | String.IsEqual(ListItem.dbtype,episode) | String.IsEqual(ListItem.dbtype,actor) | String.IsEqual(ListItem.dbtype,director)</visible>
+			</item>
+		</menu>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<platform>all</platform>
+		<summary>Fork of the ExtendedInfo script from phil65</summary>
+		<description>This script offers various possibilities to display online content inside skins as well as a complete MovieDB browser including info dialogs for various media types. Needs skin implementation for lot of functions and Chappa'ai for library functions.</description>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot1.jpg</screenshot>
+			<screenshot>resources/screenshot2.jpg</screenshot>
+			<screenshot>resources/screenshot3.jpg</screenshot>
+		</assets>
+		<news>
+		6.2.3 - Fix TV Show trailers
+		6.2.2 - Added ability to search using the tvdb_id for "extendedepisodeinfo"
+		6.2.1 - Fix context menu now available for widgets pointing to Wraith's video addon items
+		6.2.0 - Added context menu force "player select" to the play button, available via "c" and long press "enter" button
+		</news>
+	</extension>
+</addon>
+
+<addon id="script.module.catchuptv" name="US CatchUp TV" provider-name="Mr.Blamo" version="0.0.2">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0" />
+        <import addon="script.module.requests" />
+    </requires>
+    <extension library="main.py" point="xbmc.python.pluginsource">
+        <provides>all</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Catchup on tv shows from a variety of US sources!</summary>
+        <description>Watch freely available full episodes from a variety of US channels! 100% legal!</description>
+        <platform>all</platform>
+        <forum></forum>
+        <website></website>
+    </extension>
+</addon>
+
+<addon id="script.module.cryptolib" name="Crypto Libraries" version="1.1.1" provider-name="Twilight0">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary>Pure Python implementation of some cryptographic libraries</summary>
+    <source>https://github.com/Twilight0/script.module.cryptolib</source>
+    <platform>all</platform>
+    <license>MIT</license>
+  </extension>
+</addon>
+
+<addon id="script.module.demjson" name="demjson" version="2.2.3" provider-name="Kuci">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.addon.metadata">
+        <summary>Python module for JSON data encoding, including jsonlint.</summary>
+        <description>demjson is a Python language module for encoding, decoding, and syntax-checking JSON data.</description>
+        <platform>all</platform>
+        <license>GNU LGPL 3.0</license>
+        <source>https://github.com/dmeranda/demjson.git</source>
+        <website>https://github.com/dmeranda/demjson</website>
+    </extension>
+</addon>
+
+<addon id="script.module.inputstreamhelper"
+       version="0.3.4"
+       name="InputStream Helper"
+       provider-name="emilsvennesson">
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.kodi-six" version="0.0.2"/>
+        <import addon="script.module.requests" version="2.9.1"/>
+    </requires>
+    <extension library="lib" point="xbmc.python.module"/>
+    <extension point="xbmc.addon.metadata">
+        <description lang="en_GB">A simple Kodi module that makes life easier for add-on developers relying on InputStream based add-ons and DRM playback.</description>
+        <description lang="el_GR">Μία απλή μονάδα για το Kodi η οποία διευκολύνει την ζωή των προγραμματιστών οι οποίοι εξαρτώνται από τα πρόσθετσ InputStream και αναπαραγωγή τύπου DRM.</description>
+        <news>2019.03.23 v0.3.4
+        + python2_3 compability (mediaminister, Rechi)
+        + Option to disable inputstreamhelper in settings.xml
+        + calculate disk space on the tmp folder (dawez)
+        + Support for Unicode paths in Windows (WallyCZ)
+        + Italian translation (pinoelefante)
+        + Dutch translation (dnicolaas)
+        + Greek translation (Twilight0)
+        + Russian translation (vlmaksime)
+    </news>
+        <platform>all</platform>
+        <license>MIT License</license>
+        <source>https://github.com/emilsvennesson/script.module.inputstreamhelper</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="script.module.slproxy" name="SLProxy" version="0.0.5" provider-name="devilsport">
+  <requires>
+    <import addon="xbmc.python" version="2.24.0"/>
+    <import addon="script.module.requests"/>
+	  <import addon="script.module.streamlink.base" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib/"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>StreamLink Proxy DS</summary>
+    <description>Streamlink proxy for Kodi</description>
+    <platform>all</platform>
+    <license>Simplified BSD</license>
+    <source></source>
+    <language>en</language>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <news>
+    </news>
+  </extension>
+</addon>
+
+<addon id="script.module.streamlink.base" name="Streamlink Library" version="2020.03.05" provider-name="Streamlink Devs, Twilight0">
+  <requires>
+      <import addon="xbmc.python" version="2.24.0"/>
+      <import addon="script.module.requests" version="2.12.4"/>
+      <import addon="script.module.futures" version="2.2.0"/>
+      <import addon="script.module.cryptolib" version="1.1.0"/>
+<!--      <import addon="script.module.pycryptodome" version="3.4.3"/>-->
+  </requires>
+  <extension point="xbmc.python.module" library="resources/lib/"/>
+  <extension point="xbmc.addon.metadata">
+      <summary>Streamlink Library for Kodi</summary>
+      <description>Streamlink Library for Kodi. It is a collection of plugins to help resolve web page urls into streamable links. Known issue: Does not work on Xbox, specifically throws exception when trying to import something from ctypes module.</description>
+      <platform>all</platform>
+      <license>Simplified BSD</license>
+      <source>https://github.com/Twilight0/script.module.streamlink.base/</source>
+      <language>en</language>
+      <assets>
+          <icon>icon.png</icon>
+      </assets>
+      <news>+2020.03.05
+- Updated to latest commit
+
++2020.01.28
+- Updated to latest upstream commit
+- Tweaks for import errors for Python 3</news>
+  </extension>
+</addon>
+
+<addon id="script.module.streamlink.crypto" name="Streamlink Crypto" version="1.5.2" provider-name="Twilight0">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary>Pure Python implementation of the cryptographic libraries required by Streamlink</summary>
+    <source>https://github.com/Twilight0/script.module.streamlink.crypto</source>
+    <platform>all</platform>
+    <license>MIT</license>
+  </extension>
+</addon>
+
+<addon id="script.module.streamlink.plugins" name="Streamlink Plugins" version="1.0.3" provider-name="Twilight0">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.requests" version="2.12.4"/>
+  </requires>
+  <extension point="xbmc.service"/>
+  <extension point="xbmc.addon.metadata">
+    <summary>Streamlink Plugins</summary>
+    <description>Copy your custom streamlink plugins in this Kodi plugin.</description>
+    <platform>all</platform>
+    <license>GNU GPL, version 2</license>
+    <source>https://github.com/Twilight0/script.module.streamlink.plugins</source>
+    <!--<website></website>-->
+    <!--<language></language>-->
+  </extension>
+</addon>
+
+<addon id="script.module.tt" name=" TvTap" version="1.4.b" provider-name="RACC">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.livestreamer" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.routing" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <description lang="en">Tap Tv Android Apk</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="script.module.universalscrapers" name="Universal Scrapers" version="1.2.1" provider-name="Team Universal">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.beautifulsoup" version="3.2.1"/>
+        <import addon="script.module.futures" version="2.2.0"/>
+        <import addon="script.module.requests"/>
+        <import addon="script.module.six"/>
+        <import addon="repository.universalscrapers"/>
+
+		<!-- [ORION/] -->
+		<import addon="script.module.orion" version="3.4.1" />
+		<!-- [/ORION] -->
+
+	<import addon="script.module.resolveurl" version="5.0.00" optional="true"/>
+
+                <!--<import addon="script.mrknow.urlresolver" version="2016.10.30.2" optional="true"/>-->
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.python.pluginsource" library="lib/default.py">
+        <provides>executable</provides>
+    </extension>
+        <extension point="xbmc.addon.metadata">
+            <platform>all</platform>
+            <summary lang="en">Scrape common video host for URL's to be playable in XBMC/Kodi.</summary>
+            <description lang="en">Scrape common video host for URL's to be playable in XBMC/Kodi, simplifying addon development of video plugins requiring multi video hosts.
+            </description>
+            <license>GPL v3</license>
+            <source>https://</source>
+        </extension>
+</addon>
+
+<addon id="script.neptune.artwork" version="1.1.3" name="Neptune Rising Artwork" provider-name="MrBlamo">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Themes for the Neptune Rising Addon</summary>
+		<description>Themes for Neptune Rising are maintained separately to make distribution of the the addon itself easier/faster.</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
+The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
+This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
+</disclaimer>
+		<platform>all</platform>
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+		<license>Beerware rev. 42</license>
+	</extension>
+</addon>
+
+<addon id="script.neptune.metadata" version="1.0.5" name="Neptune Rising Metadata" provider-name="MrBlamo">
+	<requires>
+		<import addon="xbmc.python" version="2.19.0"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary>Metadata for the Neptune Rising Addon</summary>
+		<description>Metadata for Neptune Rising are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<platform>all</platform>
+		<reuselanguageinvoker>false</reuselanguageinvoker>
+	</extension>
+</addon>
+
+	<addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" version="1.0.14" provider-name="marcelveldt,sualfred">
+	<requires>
+		<import addon="xbmc.python" version="2.26.0"/>
+		<import addon="script.module.pil" version="1.1.7"/>
+		<import addon="script.module.kodi-six" />
+	</requires>
+	<extension point="xbmc.python.library" library="default.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Colorpicker for Kodi Skins. Part of Skin Helper Suite</summary>
+		<description lang="en_GB">Colorpicker for Kodi Skins. Part of Skin Helper Suite</description>
+		<platform>all</platform>
+		<license>GPL-2.0</license>
+		<forum>https://forum.kodi.tv/showthread.php?tid=235676</forum>
+		<source>https://github.com/kodi-community-addons/script.skin.helper.colorpicker</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+		</assets>
+	</extension>
+</addon>
+
+	<addon id="script.skin.helper.widgets" name="Skin Helper Service Widgets" version="1.0.38" provider-name="marcelveldt,patrick-klein">
+	<requires>
+		<import addon="xbmc.python" version="2.24.0"/>
+		<import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="script.module.metadatautils" version="1.0.0" />
+        <import addon="script.module.simplecache" version="1.0.0"/>
+	</requires>
+
+	<extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video audio</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="login" />
+
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Ready to use widgets for all kind of media types</summary>
+        <description></description>
+		<language></language>
+		<platform>all</platform>
+		<license>GPL v2.0</license>
+		<forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
+		<website></website>
+		<source>https://github.com/marcelveldt/script.skin.helper.widgets</source>
+	</extension>
+</addon>
+
+<addon id="service.streamlink.proxy" name="Streamlink Proxy" version="4.1.2" provider-name="Twilight0">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="script.module.streamlink.base" version="2018.06.12"/>
+        <!--<import addon="script.module.streamlink.plugins" version="1.0.3"/>-->
+    </requires>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="login"/>
+    <extension point="xbmc.python.pluginsource" library="options.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <language>en de el</language>
+        <summary>Streamlink Proxy</summary>
+        <description>Streamlink Proxy for Kodi</description>
+        <platform>all</platform>
+        <license>GPLv3</license>
+        <source>https://github.com/Twilight0/service.streamlink.proxy</source>
+        <size>172839</size>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <news>+ 4.1.2
+- Removed plugins dependency
+- Bumped base module dependency to latest</news>
+    </extension>
+</addon>
+
+<addon id="skin.estuary.killzone_leia" version="1.0.6" name="Estuary Killzone Leia" provider-name="Mr.Blamo">
+	<requires>
+		<import addon="xbmc.gui" version="5.14.0"/>
+		<import addon="script.skinshortcuts" version="0.6.5"/>
+		<import addon="script.skin.helper.service" version="1.0.0"/>
+        <import addon="script.skin.helper.widgets" version="1.0.0"/>
+        <import addon="script.image.resource.select" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+ 		<res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="scripts/viewswitcher.py" visible="!String.IsEmpty(Window(home).Property(CurrentSkin)) + Skin.HasSetting(ForcedViews.Enabled)" />
+	<extension point="kodi.context.item">
+      	<menu id="kodi.core.main">
+      		<item library="scripts/context_menu_jumptoletter.py">
+ 				<label>$LOCALIZE[40165]</label>
+ 				<visible>!String.IsEmpty(Window(home).Property(CurrentSkin)) + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,set) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,artist) | String.IsEqual(ListItem.dbtype,album) | String.IsEqual(ListItem.dbtype,musicvideo) | Container.Content(addons)] + !Window.IsVisible(Home)</visible>
+ 			</item>
+      		<item library="scripts/context_menu_moviessets.py">
+ 				<label>$LOCALIZE[40181]</label>
+ 				<visible>!String.IsEmpty(Window(home).Property(CurrentSkin)) + String.IsEqual(ListItem.DBType,set) + !Window.IsVisible(Home)</visible>
+ 			</item>
+      		<item library="scripts/context_menu_extendedinfo.py">
+        		<label>$LOCALIZE[40182]</label>
+        		<visible>!String.IsEmpty(Window(home).Property(CurrentSkin)) + System.HasAddon(script.extendedinfo) + !System.HasAddon(context.extendedinfo.dialog) + [String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(ListItem.dbtype,tvshow) | String.IsEqual(ListItem.dbtype,season) | String.IsEqual(ListItem.dbtype,actor) | String.IsEqual(ListItem.dbtype,director)]</visible>
+      		</item>
+    	</menu>
+ 	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Estuary Killzone skin by Mr.Blamo</summary>
+		<summary lang="fr_FR">Thème Estuary Killzone par Mr.Blamo</summary>
+		<description lang="en_GB">Estuary Killzone is a mod from Estuary by Mr.Blamo for Kodi 18. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="fr_FR">Estuary Killzone est un mod de Estuary par Mr.Blamo pour Kodi 18. Il est facile à comprendre et à utiliser pour les utilisateurs novices de Kodi.</description>
+		<disclaimer lang="en_GB">For better experience, be sure to install all addons required by the theme.</disclaimer>
+		<disclaimer lang="fr_FR">Pour une meilleure expérience, assurez-vous d'installer toutes les extensions requises par le thème.</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<source>https://github.com/Mr.Blamo6969/skin.estuary.killzone_leia</source>
+			<assets>
+				<icon>icon.png</icon>
+				<fanart>fanart.jpg</fanart>
+				<screenshot>resources/screenshot-01.jpg</screenshot>
+				<screenshot>resources/screenshot-02.jpg</screenshot>
+				<screenshot>resources/screenshot-03.jpg</screenshot>
+				<screenshot>resources/screenshot-04.jpg</screenshot>
+				<screenshot>resources/screenshot-05.jpg</screenshot>
+				<screenshot>resources/screenshot-06.jpg</screenshot>
+				<screenshot>resources/screenshot-07.jpg</screenshot>
+				<screenshot>resources/screenshot-08.jpg</screenshot>
+				<screenshot>resources/screenshot-09.jpg</screenshot>
+				<screenshot>resources/screenshot-10.jpg</screenshot>
+				<screenshot>resources/screenshot-11.jpg</screenshot>
+			</assets>
+			<news>[B]3.0.5[/B][CR]• Add number of bits per sample on music OSD[CR]• Add Russian translation by salashnik[CR]• Add Czech translation by Pavuucek[CR]• Add Spanish translation by notorius28[CR]• Display seekbar on showtime action[CR]• Improve detection of audio CDs using an infobool[CR]• Fix Holidays themes[CR]• Minor fixes[CR][CR][B]3.0.4[/B][CR]• KODI 18 : Bump target GUI API to 5.14.0[CR]• KODI 18 : Add GUI for Radio Data System (RDS)[CR]• Add support for 'Next Up' addon by im85288[CR]• Add 8K flag icon[CR]• Add Rip audio-cd from 'Disc' on home menu[CR]• Add Hebrew and Armenian typefaces to the fonts[CR]• Video OSD and Music OSD enhancements/fixes[CR]• Minor fixes[CR][CR][B]3.0.3[/B][CR]• KODI 18 : Video OSD - Hide 'Previous' button for non-seekable streams[CR]• KODI 18 : Game - Add controller description[CR]• KODI 18 : Game - Add 'Get all' button to controller dialog[CR]• KODI 18 : Game OSD - Show help dialog on first view[CR]• KODI 18 : Game OSD - Finish renaming 'View mode' to 'Stretch mode'[CR]• KODI 18 : Game OSD - Extend help dialog to explain lack of remote support[CR]• Add 'HDTV', 'VHS' and 'HDDVD' flag icons[CR]• Fix condition for focus on the stop button[CR]• Minor fixes[CR][CR][B]3.0.2[/B][CR]KODI 18 : • Add 'sorty by' and 'sort order' for epg grid channels[CR]• Add 'mp3float' flag icon[CR]• Fix TV Shows ratings in some views[CR]• Minor fixes[CR][CR][B]3.0.1[/B][CR]• Add support for CoreELEC settings addon[CR]• Add DefaultMusicSources icon[CR]• Game : Update available views[CR]• Game OSD : Rename 'View mode' setting label to 'Stretch mode'[CR]• Game OSD : Rename 'Input settings' setting label to 'Controls'[CR]• Fix lists on dialog video info[CR]• Fix some textures[CR]• Fix keyboard navigation[CR]• Minor fixes[CR][CR][B]3.0.0[/B][CR]• KODI 18 : Add 'Advanced settings' button to settings list for Game OSD[CR]• KODI 18 : Add video rotation setting for Game OSD[CR]• Add new video info dialog (Thanks to jurialmunkey and VikkiXavier)[CR]• Add new music info dialog[CR]• Add new extended info dialog[CR]• Add new text viewer window[CR]• Add setting to disable fullscreen video info for movies and TV shows[CR]• Remove music themes feature which caused crashes[CR]• Minor fixes[CR][CR][B]2.9.9[/B][CR]• KODI 18 : Allow user to select resolutions[CR]• Add video fps flag icon on OSD[CR]• Changes in playing trailers on video info (Thanks to jurialmunkey)[CR]• Fix music themes with video addons[CR]• Minor fixes[CR][CR][B]2.9.8[/B][CR]• KODI 18 : Audio DSP removal[CR]• Add support for music themes for movies and TV shows (theme.mp3 files) (Thanks to manfeed)[CR]• Minor fixes[CR][CR][B]2.9.7[/B][CR]• KODI 18 : Add PVR Timeshift Offset[CR]• KODI 18 : Add Epg Event Seek Time[CR]• KODI 18 : Introduced control 402 for epg event seek percentage[CR]• Enable 'Wall (thumbnails)' and 'InfoWall (thumbnails)' views for artists[CR]• Improvements[CR]• Fix forced views (thanks to hawkeyexp)[CR]• Minor fixes[CR][CR][B]2.9.6[/B][CR]• KODI 18 : Use subtitle setting osd instead of custom dialog[CR]• Add possibility to disable default splash screen[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.9.5[/B][CR]• KODI 18 : RetroPlayer: Disable reset hotkey[CR]• Add default splash screen[CR]• Add new Icon and Fanart[CR]• Add icon for font addons[CR]• Add original title on video info[CR]• Remove possibility to edit power menu to avoid some crash[CR]• Improvement[CR][CR][B]2.9.4[/B][CR]• Add scope mode for constant image height (CIH) setup (OSD only)[CR]• Add new fullscreen info for movies and episodes[CR]• Add possibility to show ratings and user ratings in same time[CR]• Add tags on dialog info[CR]• Improve support for GlobalSearch 8.x.x addon[CR]• Improve PVR channels OSD[CR]• Others improvements[CR]• Minor fixes[CR][CR][B]2.9.3[/B][CR]• Add support GlobalSearch 8.x.x addon[CR]• Add support for music artworks with Artwork Beef addon[CR]• Add movies set button on video info dialog[CR]• Add progress bar to PVR widgets[CR]• Add support for 'KN Switchtimer Service' addon on PVR info dialog[CR]• Improve 'Icons Wall' view for PVR channels[CR]• Improve dialog info windows[CR]• Add possibility to show channels groups on PVR Guide[CR]• Many others improvements in PVR[CR]• Fix forced views with a script from hawkeyexp[CR]• Fix PVR NextUp popup[CR]• Minor fixes[CR][CR][B]2.9.2[/B][CR]• Fix for movies sets overview[CR]• Minor fixes (Thanks to Angelinas)[CR][CR][B]2.9.1[/B][CR]• Add new 'Icons Wall' view for PVR channels[CR]• Add Valentine's Day and Easter themes[CR]• Add possibility to change video lyrics colors[CR]• Minor fixes[CR][CR][B]2.9.0[/B][CR]• KODI 18 : Move recording control and info functionality from player to PVR[CR]• KODI 18 : Add button to bring up program selection dialog[CR]• Add support for more aspect ratios (used by newer phones)[CR]• Add Christmas (1 december to 2 january) and Halloween (30-31 october) themes[CR]• Add extended info when playing music[CR]• Minor fixes[CR][CR][B]2.8.9[/B][CR]• Add support for music clearart on music OSD[CR]• Improvements[CR]• Fix font issue[CR]• Minor fixes[CR][CR][B]2.8.8[/B][CR]• Improve PVR info dialog[CR]• Add new 'Christmas' pattern[CR]• Fix libraries fanarts when music is played[CR]• Fix movies sets logos on 'Shift View'[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.8.7[/B][CR]• Remove protection against banned addons aka Caretaker[CR]• Replace 'Artwork Downloader' support by 'Artwork Beef' (several advantages)[CR]• Enable 'Fanart' view for music videos[CR]• Fix PVR Group Manager channellist scrollbar position[CR]• Fix video in background when opacity is set to 100%[CR]• Minor fixes[CR][CR][B]2.8.6[/B][CR]• Add warning popup to just alert people and possible to disable it[CR]• Remove unload skin for protection against banned addons[CR][CR][B]2.8.5[/B][CR]• Fix close warning popup[CR][CR][B]2.8.4[/B][CR]• Add protection against banned addons (Thanks to sualfred)[CR]• Add (rating) star symbols to fontset (Thanks to Jeroen)[CR]• Improvements[CR]• Fix logon/logoff on power menu[CR]• Minor fixes[CR][CR][B]2.8.3[/B][CR]• Remove 'doNotShareMenu' argument[CR][CR][B]2.8.2[/B][CR]• Add games addons widget to games tab[CR]• Add Genres on list and wide list views[CR]• New Favourites window[CR]• Fix Favourites widget[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.8.1[/B][CR]• KODI 18 : Add filter description to video filter dialog[CR]• Minor fixes[CR][CR][B]2.8.0[/B][CR]• KODI 18 : Add Volume setting to Game OSD[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.7.10[/B][CR]• KODI 18 : RetroPlayer: Add renderer for Windows, OpenGL and OpenGLES[CR]• Add possibility to use small video OSD[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.7.9[/B][CR]• Add possibility to show visualisation effects behind background[CR]• Improvements[CR]• Fix missing 'Jump to letter' functionality for some views[CR]• Fix pause video during access to extended info with TV Shows[CR]• Fix on PVR Radio[CR]• Minor fixes[CR][CR][B]2.7.8[/B][CR]• Add possibility to disable Clearlogo on OSD[CR]• OSD info improvements[CR]• Fix Video Lyrics[CR]• Minor fixes[CR][CR][B]2.7.7[/B][CR]• Add 'Jump to letter' functionality to context menu[CR]• Video OSD improvements[CR]• Music OSD improvements[CR]• PVR OSD improvements[CR]• Fix for PVR info[CR]• Minor fixes[CR][CR][B]2.7.6[/B][CR]• KODI 18 : Implement FullscreenGame window[CR]• Replace genres widget by new one based on genres content (thanks to sualfred for his idea)[CR]• Add new genres widgets list/panel for Personal widgets[CR]• Add new 'Most played music videos' default widget[CR]• Add possibility to show media names with widgets names[CR]• Add new functionality 'Jump to letter' when scrollbar is focused (thanks to jurialmunkey for his idea)[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.7.5[/B][CR]• KODI 18 : Add support for epg tag playback[CR]• KODI 18 : New OSD dialog for video games settings[CR]• Add possibility to automatically show music video info at beginning and end of playing (Thanks to jurialmunkey)[CR]• Add possibility to replace background when fanarts are disabled[CR]• Improve PVR OSD info[CR]• Improve video OSD info[CR]• Improve 'TV Show - Next Aired' addon[CR]• Enable more views for video addons[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.7.4[/B][CR]• Add possibility to choose when video info must be shown on video OSD[CR]• Add support for Artworks on OSD video info for addons[CR]• Add 'Recommended Youtube videos' button on OSD for Youtube addon (Thanks to jurialmunkey)[CR]• Add support for video countries icons pack[CR]• Add 'Get all Artworks' button to context menu[CR]• Improve music visualisation[CR]• Minor fix[CR][CR][B]2.7.3[/B][CR]• Video info are now displayed when video is paused with possibility to disable it[CR]• Improve OSD info[CR]• Add fallback icons for mediaflags[CR]• Add animated poster on video info dialog[CR]• Minor changes and improvements[CR]• Fix issue with scripts for others skins[CR]• Minor fixes[CR][CR][B]2.7.2[/B][CR]• Add Top 250 from IMDb on dialog video info[CR]• Add button to download all Artworks on dialog video info[CR]• Add toggle button on PVR Guide to enable standard colors for genres[CR]• Add setting to pause video during access to extended info[CR]• Add possibility to configure media flags[CR]• Change appearance of 'TV Show - Next Aired' addon[CR]• Fix fanarts when 'Show video on background' is disable[CR]• Minor changes[CR]• Minor fixes[CR][CR][B]2.7.1[/B][CR]• Add possibility to change media flags color[CR]• Add possibility to show a border for media and choose his color[CR]• Improve dialog video info[CR]• Fix movies sets info with 'Banner' view[CR]• Fix media flags for sets with 'Banner' view[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.7.0[/B][CR]• Add number of oscars on video info (thanks to jurialmunkey)[CR]• Add possibility to hide fanart opacity in fullscreen mode on music visualisation[CR]• Improve navigation with better animations[CR]• Improve some views[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.6.2[/B][CR]• Add support for Skin Helper Service PVR Artworks[CR]• Enable 'Fanart' view for episodes[CR]• Enable 'Banner' view for movies[CR]• Improve 'Banner' view [CR]• Update thumbs previews for views[CR]• Fix duplicate ratings in list views[CR]• Improvements[CR]• Minor fixes[CR[CR][B]2.6.1[/B][CR]• Changes for Kodi 18[CR]• Add possibility to hide OSD when video is paused[CR]• Add 4K HDR flag icon (filename must contain 'HDR')[CR]• Add shortcut in skin settings to configure personal API key[CR]• Add scrolling text on music visualisation (thanks to jurialmunkey)[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.6.0[/B][CR]• Add possibility to choose gradient colors (thanks to jurialmunkey for idea)[CR]• Add classic list for power menu[CR]• Add Game OSD[CR]• Improvements[CR]• Minor fixes[CR][CR][B]2.5.10[/B][CR]• Add support for movies genres icons for Personalized Widgets[CR]• Add missing H262 flag icon[CR]• Improvements[CR]• Fix for PVR in some conditions[CR]• Minor fixes[CR][CR][B]2.5.9[/B][CR]• Add possibility to play trailers on movie information screen[CR]• Reorder necessary addons in Skin Settings[CR]• Minor fixes[CR][CR][B]2.5.8[/B][CR]• Add possibility to show item label on top with minimize main menu setting[CR]• Show mute icon on libraries when mute is enable[CR]• Fix clearlogos disappearance when mute is enable[CR]• Fix for LibreELEC settings addon[CR]• Minor fixes[CR][CR][B]2.5.7[/B][CR]• Add possibility to minimize main menu[CR]• Add media flags icons for 'Triple lists' and 'Double lists' views[CR]• Remove always attrib for defaultcontrol on Settings[CR]• Changes on login screen[CR]• Minor fixes[CR][CR][B]2.5.6[/B][CR]• Add new 'Triple lists' view for TV shows[CR]• Add new 'Double lists' view for seasons[CR]• Changes for Kodi 18 : Migrate add-on settings to settings library[CR]• Minor fixes[CR][CR][B]2.5.5[/B][CR]• Add possibility to show clearlogos at the top of home menu[CR]• Add clearlogos on dialog music info[CR]• Add banners on dialog video info[CR]• Fix episodes thumbs with Personalized Widgets[CR]• Fix on 'Double lists' and 'Triple lists' views to launch full album[CR]• Minor fixes[CR][CR][B]2.5.4[/B][CR]• Add posters on 'Fanart' view[CR]• Add new 'Double lists' view for sets[CR]• Fix end time resume flag icon with AM/PM[CR]• Fix visibility for 'Double lists' and 'Triple lists' views[CR]• Minor fixes[CR][CR][B]2.5.3[/B][CR]• Add new 'Double lists' view for artists and albums[CR]• Add new 'Triple lists' view for artists[CR]• Improve esthetic appearance[CR]• Minor fixes[CR][CR][B]2.5.2[/B][CR]• Add miniatures panel for Personalized Widgets[CR]• Add support for animated weather icons[CR]• Fix missing watched icons and progress bars for Personalized Widgets[CR]• Minor fixes[CR][CR][B]2.5.1[/B][CR]• Fix aspect ratio for widgets[CR]• Minor fixes[CR]• Update German translation[CR][CR][B]2.5.0[/B][CR]/!\ Reboot Kodi and 'Reset main menu and power menu settings' in skin settings after installation of this version /!\[CR]• Add vertical panels for Personalized Widgets[CR]• Add 'Categories' appearance for Personalized Widgets[CR]• Add support for albums back thumbs (file must be placed in album folder and named 'thumbback.jpg')[CR]• Add possibility to change rating text color[CR]• Fix issue with Appearance for Personalized Widgets[CR]• Minor fixes[CR][CR][B]2.4.0[/B][CR][B]/!\ Reboot Kodi and 'Reset main menu and power menu settings' in skin settings after installation of this version /!\[/B][CR]• Add support for Skin Shortcuts template to avoid personalized widgets reloading[CR]• Add possibility to define sort method and sort direction for personalized widgets[CR]• Add rating on video osd info[CR]• Minor changes[CR]• Minor fixes[CR][CR][B]2.3.2[/B][CR]• Add VP9 video codec icon[CR]• Add rewind and forward OSD buttons for PVR TimeShift[CR]• Fix on PVR/Radio widgets[CR]• Fix duration flag icon with Global Search[CR]• Many fixes for Arial font[CR]• Minor changes[CR]• Minor fixes[CR][CR][B]2.3.1[/B][CR]• Add Next Up popup for Live TV[CR]• Add albums count on artists dialog info[CR]• Add possibility to disable 'Settings' shortcut widget[CR]• Add PVR overlay when switching channels[CR]• Fix artists/albums plots on music dialog info[CR]• Fix on PVR[CR]• Fix caterories labels for personalized widgets[CR][CR][B]2.3.0[/B][CR]• Add parental control to protect home menu items and widgets with password[CR]• Add support for German language (Thanks to rainman74)[CR]• Fix CDArts position on Global Search screen[CR]• Fix esthetic appearance[CR]• Minor fixes[CR]• Minor changes[CR][CR][B]2.2.9[/B][CR]• Add support for extendedinfo youtube list[CR]• Add shortcut for movies set info to context menu[CR]• Add shortcut for extended info to context menu[CR]• Fix lyrics on music visualisation[CR]• Fix aspect ratio on tv shows widgets[CR]• Fix channel osd recording indicator visibility[CR]• Fix esthetic appearance[CR]• Minor fixes[CR]• Minor changes[CR][CR][B]2.2.8[/B][CR]• Add info dialog for movies sets[CR]• Fix playlists editor[CR]• Minor fixes[CR][CR][B]2.2.7[/B][CR]• Changes for Kodi 18[CR]• Add possibility to disable colored outline for CDArts[CR]• Add possibility to disable animated lyrics for classic lyrics[CR]• Fix disc overlay for some CDArts[CR]• Fix extended info window for some resolutions[CR]• Fix playlists editor[CR]• Minor fixes[CR][CR][B]2.2.6[/B][CR]• Change extension file '.png' to '.jpg' for games artworks[CR]• Minor fixes[CR][CR][B]2.2.5[/B][CR]• Add games sources widget[CR]• Add support for games artworks (artworks must be named identical to the file name of the game with the extension '.png' and must be in the same folder as games)[CR]• Fix personalized widget 5[CR]• Fix plots and thumbs on info dialog to avoid spoilers[CR]• Fix widgets property[CR]• Changes on widgets when libraries are not populated[CR][CR][B]2.2.4[/B][CR]• Add possibility to show CDArt on widgets and on library[CR]• Add possibility to install addons zip files directly from home submenu[CR]• Minor fixes[CR][CR][B]2.2.3[/B][CR]• Add possibility to use alphabet for scrolling on library (experimental)[CR]• Add more personalized widgets to bypass problem with disappearance and animations of widgets (use one personalized widget per home menu item)[CR]• Changes on duration flag icon with hours and minutes[CR]• Changes on PVR Guide with Kodi 18 last build[CR]• Minor fixes[CR][CR][B]2.2.2[/B][CR]• Add possibility to greyed out watched items in library and on widgets[CR]• Add support for Videolyrics v3 with possibility to fix lyrics colors by song (thanks to manfeed)[CR]• Add support for Kodi Log Uploader addon[CR]• Fix LibreELEC settings buttons[CR]• Minor fixes[CR][CR][B]2.2.1[/B][CR]• Changes for Kodi 18[CR]• Add 'All channels' and 'All radios' widgets[CR]• Fix PVR channels OSD[CR]• Fix esthetic appearance[CR][CR][B]2.2.0[/B][CR]• Add possibility to force views in library[CR]• Add possibility to customize power menu[CR]• Add flags for moviesets widget[CR]• Fix missing view for music[CR]• Fix esthetic appearance[CR]• Fix context menu position[CR]• Minor fixes[CR][CR][B]2.1.9[/B][CR]• Changes for Kodi 18[CR]• Add preview for view mode[CR]• Minor fixes[CR][B]2.1.8[/B][CR]• Add new 'Mosaic (vertical)' view[CR][CR][B]2.1.7[/B][CR]• Changes for Kodi 18[CR]• Fix setting to disable submenu[CR]• Minor fixes[CR][CR][B]2.1.6[/B][CR]• Add new 'Gallery' view[CR]• Add new 'Mosaic' view[CR]• Add clearlogos list for 'Shift' view[CR]• Minor fixes[CR][CR][B]2.1.5[/B][CR]• Add library info on settings widget[CR]• Add ratings/user ratings in list views[CR]• Changes on 'Next episode to watch' widget[CR]• Minor fixes[CR][CR][B]2.1.4[/B][CR]• Add possibility to configure submenus for Personnal Widget[CR]• Add possibility to show banners for episodes/thumbs widgets[CR]• Decrease number of personal widgets to 8 because not possible to show more[CR]• Fix context menu for CU LRC Lyrics addon[CR]• Fix disable Clearlogos on library[CR]• Minor fixes[CR][CR][B]2.1.3[/B][CR]• Fix centered posters on some views[CR]• Fix missing posters flag for moviesets with Wall (Thumbnails) view[CR]• Minnor fixes[CR][CR][B]2.1.2[/B][CR]• Fix adding item with Skin Shortcut[CR][CR][B]2.1.1[/B][CR]• Add support for submenus with Skin Shortcuts addon[CR]• Minnor fixes[CR][CR][B]2.1.0[/B][CR]• Add support for Skin Shortcuts addon to customize home menu and widgets[CR]• Add support for thumbnails with NextUp Service addon[CR]• Add support for Videolyrics v2 (thanks to manfeed)[CR]• Minnor fixes[CR]• Special Thanks to Gracus and ferent for reporting issue[CR][CR][B]2.0.6[/B][CR]• Add two views for power menu[CR]• Add possibility to hide thumbs episodes to avoid spoilers[CR]• Fix banner on music visualisation when next tracks are not available[CR]• Fix missing clearlogos with moviesets widget[CR]• Fix in musicvideo views[CR]• Fix label with moviesets thumbnails[CR]• Enable landscape views for seasons[CR]• Drop support for using hyphen as none value[CR]• Minnor fixes[CR][CR][B]2.0.5[/B][CR]• Add info button on video OSD[CR]• Add language and subtitles language on fullscreen info[CR]• Add button to switch between all/watched/unwatched recordings[CR]• Replace rating badge[CR]• Fix Youtube call[CR]• Minnor fixes[CR][CR][B]2.0.4[/B][CR]• Add new 'InfoWall (thumbnails)' view[CR]• Add new 'Wall (thumbnails)' view[CR]• Add extrafanarts support for 'Fanart' view[CR]• Add icon when item is resumable[CR]• Hide OSD directly after pause[CR]• Fix esthetic appearance[CR]• Minnor fixes[CR][CR][B]2.0.3[/B][CR]• Add Videolyrics (credits to manfeed)[CR]• Add new 'Next episodes to see' widget[CR]• Replace music videos widgets[CR]• Fix color with lyrics[CR]• Fix banner on music fullscreen[CR]• Fix music visualisation[CR]• Fix esthetic appearance[CR][CR][B]2.0.2[/B][CR]• Fix selecting widgets[CR][CR][B]2.0.1[/B][CR]• Add possibility to reorder main menu items[CR]• Add possibility to reset main menu items back to default[CR]• Add possibility to show smaller icons for 'Categories' widgets[CR]• Add studios flag icons for movies widgets[CR]• Add shortcuts on power menu to update video/music library[CR]• Fix colordiffuse for studios and labels flag icons[CR]• Minnor fixes[CR][CR][B]2.0.0[/B][CR]• Initial release[CR]• Add possibility to hide main menu when selecting widgets[CR]• Add possibility to disable each widget[CR]• Add possibility to hide watched items from recently added widgets[CR]• Add possibility to hide episodes plots to avoid spoilers[CR]• Add possibility to change skin color[CR]• Add possibility to change background color[CR]• Add possibility to change pattern color[CR]• Add possibility to change background opacity[CR]• Add possibility to top and bottom bars opacity[CR]• Add possibility to change weather icons pack[CR]• Add possibility to change studios icons pack[CR]• Add possibility to change genres icons pack[CR]• Add possibility to set splash screen (photo, video or music)[CR]• Add possibility to set number of items to display on widgets[CR]• Add possibility to backup/restore skin settings[CR]• Add possibility to disable zoom effect[CR]• Add possibility to enable/disable music visualisation effects on background[CR]• Add possibility to enable/disable video on background[CR]• Add possibility to hide notification popup during playback[CR]• Add possibility to show music visualisation screen when playing song[CR]• Add possibility to ExtraFanarts on music visualisation screen[CR]• Add possibility to animate Fanart/ExtraFanarts on music visualisation screen[CR]• Add possibility to add music visualisation effects on music visualisation screen[CR]• Add possibility to disable Kodi screensaver on music visualisation screen[CR]• Add possibility to start Artwork Downloader at startup[CR]• Add next tracks on music visualisation screen[CR]• Add actors list on video OSD[CR]• Add more buttons on OSD[CR]• Add more flag icons[CR]• Add next airing episodes widget for tv shows[CR]• Add horizontal view for PVR Guide[CR]• Add support for records labels icons pack[CR]• Add support for ExtraFanarts[CR]• Add support for animated posters[CR]• Add support for Clearlogos[CR]• Add support for CDArts[CR]• Add support for Artwork Downloader addon[CR]• Add support for NextUp Notification addon[CR]• Add support for CU LRC Lyrics addon[CR]• Add support for RSS Editor addon[CR]• Add support for Global Search addon[CR]• Add support for TV Show Next Aired addon[CR]• Add support for Extended Info addon[CR]• Add support for LibreELEC settings addon[CR]• Add support for Kiosk mode[CR]• Changes on views[CR]• Changes on volume bar[CR]• Some fixes[CR][CR]</news>
+	</extension>
+</addon>
+
+<addon id="skin.estuary_killzone" version="1.6.6" name="Estuary KillZone MOD" provider-name="phil65, SchisM, MR Blamo">
+	<requires>
+		<import version="5.12.0" addon="xbmc.gui"/>
+		<import addon="script.grab.fanart" />
+		<import addon="script.skinshortcuts" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+		<res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+		<res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Estuary skin by phil65 and Piers. (Kodi's default skin)</summary>
+		<summary lang="en_NZ">Estuary skin by phil65 and Piers. (Kodi's default skin)</summary>
+		<summary lang="en_US">Estuary skin by phil65 and Piers. (Kodi's default skin)</summary>
+		<summary lang="es_ES">Skin Estuary, creado por phil65 and Piers (skin por defecto de Kodi).</summary>
+		<summary lang="ru_RU">Обложка Estuary (стандартная обложка Kodi). Авторы: phil65 and Piers.</summary>
+		<description lang="en_GB">Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="en_NZ">Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="en_US">Estuary is the default skin for Kodi 17.0 and above. It attempts to be easy for first time Kodi users to understand and use.</description>
+		<description lang="es_ES">Estuary es el skin por defecto para Kodi 17.0 o superior. Su objetivo es la facilidad de comprensión y uso para usuarios primerizos de Kodi.</description>
+		<description lang="ru_RU">Estuary — это стандартная обложка Kodi, начиная с версии 17.0.&#10;Простая и понятная в использовании для новых пользователей Kodi.</description>
+		<disclaimer lang="en_GB">Estuary is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="en_NZ">Estuary is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="en_US">Estuary is the default skin for Kodi, removing it may cause issues</disclaimer>
+		<disclaimer lang="es_ES">Estuary es el skin por defecto de Kodi. Desinstalarlo puede causar problemas.</disclaimer>
+		<disclaimer lang="ru_RU">Estuary — это стандартная обложка Kodi, и ее удаление может привести к возникновению проблем</disclaimer>
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+		<forum>http://forum.kodi.tv/</forum>
+		<source>https://github.com/xbmc/skin.estuary/</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+	</extension>
+</addon>
+</addons>
