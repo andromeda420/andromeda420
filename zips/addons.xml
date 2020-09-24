@@ -411,6 +411,21 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
+<addon id="script.module.cryptopy" name="CryptoPy" version="1.2.10" provider-name="cryptopy.sourceforge.net">
+  <requires>
+    <import addon="xbmc.python" version="2.24.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="lib"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">CryptoPy is a pure python implmentation of cryptographic algorithms and applications.</summary>
+    <description lang="en">CryptoPy is a pure python implmentation of cryptographic algorithms and applications. The algorithms are developed for readability more than speed. The collection now includes IEEE 802.11i specific algorithms that generated the test vectors for 802.11i.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
 <addon id="script.module.demjson" name="demjson" version="2.2.3" provider-name="Kuci">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -456,6 +471,22 @@ This is a Non-profit resource, organized solely for educational purposes which i
             <icon>resources/icon.png</icon>
         </assets>
     </extension>
+</addon>
+
+<addon id="script.module.schism.common" name="BK Reborn Common Libraries" version="2018.12.16" provider-name="[COLOR gold][B][Brackets][/B][/COLOR]">
+	<requires>
+		<import addon="xbmc.python" version="2.1.0" />
+		<import addon="script.module.six" />
+		<import addon="script.module.metahandler" />
+		<import addon="script.module.beautifulsoup" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Collection of modules used by BK Reborn</summary>
+		<description lang="en">Collection of modules used by BK Reborn</description>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+	</extension>
 </addon>
 
 <addon id="script.module.slproxy" name="SLProxy" version="0.0.5" provider-name="devilsport">
