@@ -1,0 +1,64 @@
+<xml>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="hide-it.xsl" type="text/xsl"?>
+
+<layouttype>Fuck Off You Nosey Cunt</layouttype>
+
+<!----   DO NOT EDIT ABOVE THIS LINE!!!  BASIC OBFUSCATION METHODS!!!-->
+
+<item>
+<title>[COLOR green]WELCOME TO[/COLOR] [COLOR gold]Ouija[/COLOR]
+[COLOR green]THE ADDON FOR ALL YOUR PARANORMAL NEEDS![/COLOR]</title>
+<thumbnail>https://i.imgur.com/JP83SrV.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</item>
+
+<item>
+<title>[COLOR orange]************************************************[/COLOR]</title>
+<thumbnail>https://i.imgur.com/JP83SrV.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</item>
+
+<dir>
+<title>[COLOR red]Paranormal Playlists[/COLOR]</title>
+<link>http://xtasy-d.co.uk/mylists/PARANORMALPLAYLISTS.xml</link>
+<thumbnail>https://i.imgur.com/5VpPyHd.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</dir>
+
+<dir>
+<title>[COLOR red]Paranormal TV Shows[/COLOR]</title>
+<link>http://xtasy-d.co.uk/mylists/PARANORMALTVSHOWS.xml</link>
+<thumbnail>https://i.imgur.com/XkgWTjq.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</dir>
+
+<dir>
+<title>[COLOR red]Paranormal Youtube Shows[/COLOR]</title>
+<link>http://xtasy-d.co.uk/mylists/PARANORMALYOUTUBESHOWS.xml</link>
+<thumbnail>https://i.imgur.com/1WzPqPe.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</dir>
+
+<dir>
+<title>[COLOR red]Paranormal Youtube Channels[/COLOR]</title>
+<link>http://xtasy-d.co.uk/mylists/PARANORMALCHANNELS.xml</link>
+<thumbnail>https://i.imgur.com/mtJORb2.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</dir>
+
+<plugin>
+<title>[COLOR red]Paranormal Documentaries[/COLOR]</title>
+<link>http://xtasy-d.co.uk/mylists/PARANORMALDOCUMENTARIES.xml</link>
+<thumbnail>https://i.imgur.com/3eNk5EG.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</plugin>
+
+<plugin>
+<title>[COLOR red]Paranormal Stories[/COLOR]</title>
+<link>plugin://plugin.video.youtube/playlist/PLHFkOmjtjZY6KSSoSBe4O6O1ok66vX6Ut/</link>
+<thumbnail>https://i.imgur.com/6pppaic.jpg</thumbnail>
+<fanart>https://i.imgur.com/sFGf9nC.jpg</fanart>
+</plugin>
+
+</xml>
