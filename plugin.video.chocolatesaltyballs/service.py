@@ -71,7 +71,7 @@ def main():
     try:
         current_version = ownAddon.getSetting('current_version')
         if current_version == '':
-            current_version = '2.2'
+            current_version = '0'
         enable_notification = ownAddon.getSetting('enable_notification')
         if enable_notification == '' or enable_notification == 'false':
             enable_notification = False
@@ -85,7 +85,7 @@ def main():
 
         update_version = ownAddon.getSetting('update_ver')
         if update_version == '':
-            update_version = '2.3'
+            update_version = '0'
 
         debug = ownAddon.getSetting('debug')
         if debug == '' or debug == 'false':
