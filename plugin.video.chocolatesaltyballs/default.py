@@ -17,15 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import sys
-import os
-import re
-import shutil
-import xbmcplugin
-import xbmcgui
-import xbmc
-import xbmcvfs
-from resources.lib import kodi
+
 import __builtin__
 import xbmcaddon
 
@@ -104,7 +96,7 @@ def root():
     try:
         if display_menu == True:
             if enable_newswin == 'true':
-                koding.Add_Dir(name='[COLOR green]Latest News And Updates[/COLOR]', url='{"my_text":"Latest News[CR]!!!","my_desc":""}', mode='dialog_example', folder=False, icon=os.path.join(art_path,'news.png'), fanart=os.path.join(art_path,'fanart.jpg'))
+                koding.Add_Dir(name='Latest News And Updates', url='{"my_text":"Latest News[CR]!!!","my_desc":""}', mode='dialog_example', folder=False, icon=os.path.join(art_path,'icon.png'), fanart=os.path.join(art_path,'fanart.jpg'))
             if not get_list(root_xml_url):
                 koding.Add_Dir(
                     name=_("Message"),

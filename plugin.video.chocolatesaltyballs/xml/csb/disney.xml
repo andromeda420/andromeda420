@@ -1,0 +1,22 @@
+    <kidsmain>
+        <dir>
+            <title>Disney Channel</title>
+            <meta>
+                <title>Disney Channel</title>
+                <summary>View lists of shows on the Disney channel and find sources using Universal Scrapers</summary>
+            </meta>
+            <tmdb>network/shows/54</tmdb>
+            <thumbnail>https://disney.png</thumbnail>
+        </dir> 
+
+        <dir>
+            <title>Disney XD Channel</title>
+            <meta>
+                <title>Disney XD Channel</title>
+                <summary>View lists of shows on the Disney XDchannel and find sources using Universal Scrapers</summary>
+            </meta>
+            <tmdb>network/shows/44</tmdb>
+            <thumbnail>https://disneyxd.png</thumbnail>
+        </dir> 
+    </kidsmain>
+

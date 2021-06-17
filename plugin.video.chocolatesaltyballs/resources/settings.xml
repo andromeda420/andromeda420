@@ -10,7 +10,7 @@
         <setting label="32510" type="lsep" visible="false"/>
         <setting label="32511" type="select" values="BOTH|SD|HD" id="default_link" default="BOTH" visible="false"/>
         <setting label="32514" type="lsep" visible="false"/>
-        <setting label="32515" type="bool" id="enable_gifs" default="false" visible="true"/>
+        <setting label="32515" type="bool" id="enable_gifs" default="false" visible="false"/>
         <setting label="Cool Choices" type="lsep"/>
         <setting id="news_win" type="bool" label="Enable News Dialog" default="true" visible="true"/>
         <setting id="dlimage" type="bool" label="Enable Image Downloader" default="false" visible="true"/>
@@ -34,7 +34,7 @@
 				action="RunPlugin(plugin://plugin.video.chocolatesaltyballs/?mode=clearScraperCache)"/>			   
         <setting label="Clear Cache Without Prompts" type="bool" id="quiet_cache" default="true" visible="true"/>
 		<setting label="Enable Main Cache" type="bool" id="enable_cache" default="true" visible="true"/>
-		<setting label="Main Cache Time in minutes" type="text" id="main_cache_time" default="10" visible="true"/>	
+		<setting label="Main Cache Time in minutes" type="text" id="main_cache_time" default="1440" visible="true"/>	
     </category>
 
     <!-- custom login settings -->
@@ -49,7 +49,7 @@
         <setting id="pwd_var" type="text" label="30207" default="password" visible="false"/>
         <setting id="session_length" type="text" label="30208" default="24" visible="false"/>
         <setting id="login_verified" type="text" label="30205" default="Welcome to" visible="false"/>
-        <setting id="login_welcome_msg" type="text" label="30210" default="Welcome to Jen %s" visible="false"/>
+        <setting id="login_welcome_msg" type="text" label="30210" default="Welcome to ChocolateSaltyBalls %s" visible="false"/>
         <setting id="login_failed_msg" type="text" label="30211" default="Username or Password was incorrect %s" visible="false"/>
         <setting id="login_required_msg" type="text" label="30212" default="Please enter a valid username and password in Settings" visible="false"/>
     </category>-->
@@ -60,7 +60,7 @@
         <setting label="30734" type="action" option="close"
                action="RunPlugin(plugin://plugin.video.chocolatesaltyballs/?mode=ScraperSettings)"/>
         <setting id="use_link_dialog" label="30744" type="bool" default="true" />
-        <setting id="link_fallthrough" label="30745" type="bool"	default="false" visible="eq(-1,true)"/>
+        <setting id="link_fallthrough" label="30745" type="bool"	default="true" visible="eq(-1,true)"/>
     </category>
 
     <!-- resolveurl settings -->
@@ -73,8 +73,8 @@
         <setting label="30735" type="lsep"/>
         <setting id="allow_debrid" label="30743" type="bool" default="true"/>
         <setting id="allow_openload" label="30736" type="bool" default="false"/>
-        <setting id="allow_the_video_me" label="30737" type="bool" default="true"/>
-        <setting id="allow_vidup_me" label="30738" type="bool" default="true"/>
+        <setting id="allow_the_video_me" label="30737" type="bool" default="false"/>
+        <setting id="allow_vidup_me" label="30738" type="bool" default="false"/>
         <setting label="30760" type="lsep" visible="false"/>
         <setting id="disable_messages" label="30767" type="bool" default="false" visible="false"/>
         <setting id="enable_offensive" label="30761" type="bool" default="false" enable="eq(-1,false)" visible="false"/>
@@ -102,12 +102,11 @@
     <!-- Dev mode - future features for playlisters and developers -->
     <category label="30770">
         <setting id="debug" type="bool" label="30758" default="false" visible="true"/>
-        <setting id="root_xml" type="text" label="30060" option="hidden" default="http://hazmatcorner.com/csb/chocolatemain.xml" visible="false"/>
-        <setting id="message_xml_url" type="text" label="News File Location" option="hidden" default="http://hazmatcorner.com/news/news.xml" visible="false"/>
-        <setting id="current_version" type="text" label="Current API Set Version" option="hidden" default="2.2" visible="false"/>
-        <setting id="update_ver" type="text" label="Update Set Version" option="hidden" default="2.3" visible="false"/>
+        <setting id="root_xml" type="text" label="30060" option="hidden" default="file://chocolatemain.xml" visible="false"/>
+        <setting id="message_xml_url" type="text" label="News File Location" option="hidden" default="file://news.xml" visible="false"/>
+        <setting id="current_version" type="text" label="Current API Set Version" option="hidden" default="0" visible="false"/>
         <setting id="enable_notification" type="bool" label="Enable Service Notification" option="hidden" default="true" visible="false"/>
-        <setting id="disable_service" type="bool" label="Disable Service after First Run" option="hidden" default="false" visible="false"/>
+        <setting id="disable_service" type="bool" label="Disable Service after First Run" option="hidden" default="true" visible="false"/>
         <setting id="search_db_location" type="text" label="30061" option="hidden" default="" visible="false"/>
     </category>
 

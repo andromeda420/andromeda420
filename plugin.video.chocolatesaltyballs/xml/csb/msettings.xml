@@ -1,0 +1,62 @@
+    <mysettings>
+        <plugin>
+            <title>CSB: Customization</title>
+            <meta>
+                <summary>Open the Settings for the addon on the Customization tab</summary>
+            </meta>
+            <mysettings>0/0</mysettings>
+            <thumbnail>http://hotapk.biz/Blamo/icons/settings.png</thumbnail>
+        </plugin>
+
+        <plugin>
+            <title>CSB: Cache</title>
+            <meta>
+                <summary>Open the Settings for the addon on the General tab</summary>
+            </meta>
+            <mysettings>1/0</mysettings>
+            <thumbnail>http://hotapk.biz/Blamo/icons/settings.png</thumbnail>
+        </plugin>
+        
+        <plugin>
+            <title>CSB: Scraper Setup</title>
+            <meta>
+                <summary>Open the Settings for the addon on the General tab</summary>
+            </meta>
+            <mysettings>3/0</mysettings>
+            <thumbnail>http://hotapk.biz/Blamo/icons/settings.png</thumbnail>
+        </plugin>
+
+        <plugin>
+            <title>REAL-DEBRID: Re-Authorize (ResolveURL)</title>
+            <meta>
+                <summary>(Re)Authorize Real-Debrid in the Resolve URL Addon</summary>
+            </meta>
+            <link>plugin://script.module.resolveurl/?mode=auth_rd</link>
+            <thumbnail>http://hotapk.biz/Blamo/icons/settings.png</thumbnail>
+        </plugin>
+
+        <item>
+            <title>PAIRING: Pair My Connection</title>
+            <meta>
+                <summary>(Re)Authorize Real-Debrid in the Resolve URL Addon</summary>
+            </meta>
+            <pairwith>pairlist</pairwith>
+            <thumbnail>http://hotapk.biz/Blamo/icons/settings.png</thumbnail>
+        </item>
+
+        <item>
+            <title>YOUTUBE: Daily Limit Error Fix</title>
+            <meta>
+                <summary>Apply fix for YouTube Daily Limit Error</summary>
+            </meta>
+            <ytapi>CSB Daily Limit Fix/AIzaSyC7m0BfFiCgBcZTvynt22arZ238yQP-jI0/183165343244-r614ajldlb2fr0f6knvpp9h5devangou.apps.googleusercontent.com/9EXVjtJMJjcrMFiXcdycIZgo</ytapi>
+        </item>
+
+        <item>
+            <title>YOUTUBE: Live and CAMS Fix</title>
+            <meta>
+                <summary>Apply fix for YouTube Live playback issues and if you have problems with CAMS</summary>
+            </meta>
+            <ytdash></ytdash>
+        </item>
+    </mysettings>

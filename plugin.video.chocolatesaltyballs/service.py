@@ -42,13 +42,9 @@
 
 
 """
-import sys
-import xbmc
-import xbmcgui
-import xbmcaddon
-import xbmc
-import os,re,traceback
 
+import os,re,traceback
+import xbmc,xbmcaddon,xbmcgui
 
 
 addon_id   = xbmcaddon.Addon().getAddonInfo('id')
@@ -64,7 +60,7 @@ addon_path= xbmc.translatePath(('special://home/addons/%s' % (addon_id))).decode
 #######################################################################
 
 
-my_settings = {'root_xml':'http://hazmatcorner.com/csb/chocolatemain.xml'}
+my_settings = {'root_xml':'file://chocolatemain.xml'}
 
 
 def main():
@@ -81,7 +77,7 @@ def main():
         if disable_after_update == '' or disable_after_update == 'false':
             disable_after_update = False
         else:
-            disable_after_update = False
+            disable_after_update = True
 
         update_version = ownAddon.getSetting('update_ver')
         if update_version == '':
@@ -192,9 +188,9 @@ def get_my_settings():
             xml_root = re.search('id="root_xml".+?/>', xml_content)
             if not xml_root == None:
                 xml_root = re.findall('default="(.+?)"', xml_root.group())[0]
-                my_settings['root_xml'] = (xml_root if not 'visible' in xml_root else 'http://hazmatcorner.com/csb/chocolatemain.xml')
+                my_settings['root_xml'] = (xml_root if not 'visible' in xml_root else 'file://chocolatemain.xml')
             else:
-                my_settings['root_xml'] = 'http://hazmatcorner.com/csb/chocolatemain.xml'
+                my_settings['root_xml'] = 'file://chocolatemain.xml'
         except:
             failure = traceback.format_exc()
             print('Service XML Parse Exception - Root XML \n %s' % (str(failure)))
@@ -204,9 +200,9 @@ def get_my_settings():
             message_xml_url = re.search('id="message_xml_url".+?/>', xml_content)
             if not message_xml_url == None:
                 message_xml_url = re.findall('default="(.+?)"', message_xml_url.group())[0]
-                my_settings['message_xml_url'] = (message_xml_url if not 'visible' in message_xml_url else 'http://hazmatcorner.com/news/news.xml')
+                my_settings['message_xml_url'] = (message_xml_url if not 'visible' in message_xml_url else 'file://news.xml')
             else:
-                my_settings['message_xml_url'] = 'http://hazmatcorner.com/news/news.xml'
+                my_settings['message_xml_url'] = 'file://news.xml'
         except:
             failure = traceback.format_exc()
             print('Service XML Parse Exception - Message XML \n %s' % (str(failure)))
@@ -342,7 +338,7 @@ def disable_this():
     xml_content = openfile(addonxml_path)
     if re.search('point="xbmc.service"', xml_content):
         xml_content = xml_content.replace('point="xbmc.service"',
-                'point="xbmc.chocolatesaltyballs"')
+                'point="xbmc.jen"')
         savefile(addonxml_path, xml_content)
     else:
         pass

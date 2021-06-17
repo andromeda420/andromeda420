@@ -1,0 +1,11 @@
+<dir>
+	<title>[COLOR gold]Movie Night[/COLOR]</title>
+	<link>file://csb/movienight/movienight.xml</link>
+	<thumbnail>https://image.ibb.co/gtsNjw/next.png</thumbnail>
+</dir>
+
+<dir>
+	<title>[COLOR gold]Movie Night 2[/COLOR]</title>
+	<link>file://csb/movienight/movienight2.xml</link>
+	<thumbnail>https://image.ibb.co/gtsNjw/next.png</thumbnail>
+</dir>
