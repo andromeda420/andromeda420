@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <addon id="repository.blamorepo" name="[COLOR red]Blamo Repo Reborn[/COLOR]" version="1.2.3" provider-name="[COLOR red]Mr.Blamo[/COLOR]">
+    <addon id="repository.blamorepo" name="[COLOR red]Blamo Repo Reborn[/COLOR]" version="1.2.4" provider-name="[COLOR red]Mr.Blamo[/COLOR]">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -9,9 +9,9 @@
             <datadir zip="true">https://raw.githubusercontent.com/andromeda420/andromeda420/master/zips/</datadir>
             <hashes>false</hashes>
             <dir>
-                <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
-                <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
-                <datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+                <info compressed="false">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/kodi-community-addons/repository.marcelveldt/master/repository/</datadir>
             </dir>
             <dir>
                 <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
@@ -22,11 +22,6 @@
                 <info>https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/addons.xml.md5</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/rmrector/repository.rector.stuff/master/</datadir>
-            </dir>
-            <dir>
-                <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
-                <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
-                <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
             </dir>
             <dir>
                 <info compressed="false">https://repo.orionoid.com/addons.xml?v=3.3.0</info>
